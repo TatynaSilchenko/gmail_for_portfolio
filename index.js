@@ -4,8 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const login = process.env.SMTP_LOGIN;
-const password = process.env.SMTP_PASSWORD;
+let login = process.env.SMTP_LOGIN||"...";
+let password = process.env.SMTP_PASSWORD||"...";
 
 app.use(cors());
 // parse application/x-www-form-urlencoded
@@ -35,7 +35,7 @@ app.post('/sendMessage', async (req, res) => {
     });
     res.send("ok")
 });
-const port = process.env.PORT||3010;
-app.get('/', (req, res) => res.send('Hi!'));
 
+app.get('/', (req, res) => res.send('Hi!'));
+let port = process.env.PORT||3010;
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
