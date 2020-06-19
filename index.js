@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'smtp.gmail.com',
     auth: {
-        user: login, // generated ethereal user
-        pass: password, // generated ethereal password
+        user: 'taniasilchenko212@gmail.com', // generated ethereal user
+        pass: "2123238t", // generated ethereal password
     },
 });
 
